@@ -8,7 +8,7 @@ shopt -s autocd                     # Prepend cd to directory names automaticall
 export HISTSIZE=500000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignorespace:ignoredups
-export EDITOR=vim
+export EDITOR=nvim
 
 # set the default prompt to colors and to display if previous command has failed
 export PS1='$(if [[ $? == 0 ]]; then echo "\[\033[0;32m\]✓"; else echo "\[\033[0;31m\]✗"; fi) \[\e[0;1m\][\u@\h \W]\$ \[\e[m\]' 
@@ -20,6 +20,7 @@ alias  la='ls -A   --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --co
 alias lla='ls -lhA --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias  li='ls -lhi --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 
+alias vim="nvim"
 alias cp="cp -i"
 alias df='df -h'
 alias du='du -h'

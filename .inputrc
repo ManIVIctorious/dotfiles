@@ -1,0 +1,61 @@
+#set editing-mode emacs
+#set editing-mode vi
+
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+
+#Die Ausführung des folgenden Befehls gibt alle verfügbaren
+# Shortcuts für den aktuellen input-mode aus. Um die Shortcuts
+# für den Normal-Mode auszugeben muss der Befehl im Normal-Mode
+# ausgeführt werden und für die Bindings im Input-Mode eben
+# im Input-Mode:
+#       bind -p | grep -v '^#\|self-insert\|^$'
+#Um den Code einer Tastenkombination zu erhalten kann das Programm
+# "read" verwendet werden. (read\n tastenkombination\n)
+
+$if mode=vi
+# Keymaps for Command-Mode
+set keymap vi-command
+# set History search for <PageUp> and <PageDown>
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+# set <C-leftarrow> <C-rightarrow> for wordwise jump
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+# autocomplete with <shift>-<tab>
+"\e[Z": menu-complete
+# Insert the parameters from the last command with P
+"P": "i !!*\r"
+
+# Keymaps for Insert-Mode
+set keymap vi-insert
+# set History search for <PageUp> and <PageDown>
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+# set <C-leftarrow> <C-rightarrow> for wordwise jump
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+# Clear Screen with <C-l>
+"\C-l": clear-screen
+# autocomplete with <shift>-<tab>
+"\e[Z": menu-complete
+$endif
+
+$if mode=emacs
+# for linux console and RH/Debian xterm
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+"\e[7~": beginning-of-line
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+$endif

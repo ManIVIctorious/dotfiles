@@ -24,6 +24,6 @@ case $session in
     xfce)          exec startxfce4;;
     cinnamon)      exec cinnamon-session;;
     # No known session, try to run it as command
-    *) exec $1;;                
+    *) exec $1;;
 esac
 

@@ -1,0 +1,23 @@
+# editor
+  alias vi="${EDITOR}"
+  alias vim="${EDITOR}"
+
+# aliases for the ls command
+  alias  ls='ls       --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+  alias  ll='ls -lh   --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+  alias  lt='ls -lhrt --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+  alias  la='ls -A    --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+  alias lla='ls -lhA  --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+  alias  li='ls -lhi  --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+
+# colorisation of CLI
+  alias diff='diff --color=auto'
+  alias grep='grep --color=auto'
+  # source code highlighting for less, requires source-highlight package
+  alias less='less -R'
+  export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+  export LESS='-R '
+
+# additional aliases
+  alias cp="cp -i"
+  alias find='find -regextype grep'

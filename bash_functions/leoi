@@ -1,0 +1,8 @@
+#leoi - LeoDictionary
+#requires: w3m
+#usage:    leoi <searched-word(german or italian)>
+function leoi {
+  phrase='\(Substantive\|Verben\|Adjektive\|Beispiele\|Phrasen\|Ähnliche\|Suchumfeld\|Diskussionen\)'
+  w3m -dump "https://dict.leo.org/italienisch-deutsch/?search=\"$*\""  | sed -n "/\(${phrase}::\)\+/I,\$p" | less
+}
+export -f leoi

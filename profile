@@ -4,5 +4,6 @@ export PATH=$PATH:${MyLocalPath}
 export PKG_CONFIG_PATH=${HOME}/src/pkgconfig/
 
 export GTK_CSD=1
+export QT_STYLE_OVERRIDE=breeze
 export QT_QPA_PLATFORMTHEME=qt5ct
 

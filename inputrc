@@ -1,19 +1,19 @@
 #set editing-mode emacs
 #set editing-mode vi
 
-set meta-flag on
-set input-meta on
+set meta-flag    on
+set input-meta   on
 set convert-meta off
-set output-meta on
+set output-meta  on
 
-#Die Ausführung des folgenden Befehls gibt alle verfügbaren
-# Shortcuts für den aktuellen input-mode aus. Um die Shortcuts
-# für den Normal-Mode auszugeben muss der Befehl im Normal-Mode
-# ausgeführt werden und für die Bindings im Input-Mode eben
-# im Input-Mode:
+#To list all set keyboard shortcuts for the momentary input mode
+# the following command can be used
 #       bind -p | grep -v '^#\|self-insert\|^$'
-#Um den Code einer Tastenkombination zu erhalten kann das Programm
-# "read" verwendet werden. (read\n tastenkombination\n)
+#To list bindings for the normal mode the command must be executed
+# in this mode (write command, <Esc><CR>)
+#The character code can be determined by the read command:
+#       read\n <keybinding>
+#   e.g. read\n <PgUp> returns ^[[5~ which can be used here as \e[5~
 
 $if mode=vi
 # Keymaps for Command-Mode

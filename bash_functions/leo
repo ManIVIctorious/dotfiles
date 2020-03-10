@@ -1,0 +1,8 @@
+#leo - LeoDictionary
+#requires: w3m
+#usage:    leo <searched-word(german or english)>
+function leo {
+  phrase='\(Substantive\|Verben\|Adjektive\|Beispiele\|Phrasen\|Ähnliche\|Suchumfeld\|Diskussionen\)'
+  w3m -dump "http://pda.leo.org/?search=\"$*\"" | sed -n "/\(${phrase}::\)\+/I,\$p" | less
+}
+export -f leo

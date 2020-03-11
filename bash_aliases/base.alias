@@ -14,9 +14,13 @@
   alias diff='diff --color=auto'
   alias grep='grep --color=auto -d skip'
   # source code highlighting for less, requires source-highlight package
-  alias less='less -R'
   export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-  export LESS='-R '
+  # settings for less:
+  #   make search smartcase (-i)
+  #   use colors in pager (-R)
+  #   enable mouse wheel scrolling (--mouse)
+  #   set scroll width to 3 lines per tic (--wheel-lines=3)
+  export LESS='-iR --mouse --wheel-lines=3'
 
 # additional aliases
   alias cp="cp -i"

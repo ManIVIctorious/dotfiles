@@ -12,7 +12,7 @@
 
 # colorisation of CLI
   alias diff='diff --color=auto'
-  alias grep='grep --color=auto'
+  alias grep='grep --color=auto -d skip'
   # source code highlighting for less, requires source-highlight package
   alias less='less -R'
   export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"

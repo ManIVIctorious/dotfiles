@@ -5,6 +5,7 @@ set meta-flag    on
 set input-meta   on
 set convert-meta off
 set output-meta  on
+set completion-ignore-case off
 
 #To list all set keyboard shortcuts for the momentary input mode
 # the following command can be used

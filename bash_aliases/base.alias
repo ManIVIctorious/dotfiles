@@ -1,3 +1,7 @@
+
+
+# Base aliases for the GNU core utils
+
 # editor
   alias vi="${EDITOR}"
   alias vim="${EDITOR}"
@@ -24,4 +28,4 @@
 
 # additional aliases
   alias cp="cp -i"
-  alias find='find -regextype grep'
+  function find { find "$@" -regextype grep; }

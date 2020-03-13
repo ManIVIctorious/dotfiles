@@ -1,3 +1,5 @@
+
+
 #wsrm - white space remover
 #usage:    wsrm <file(s)>
 function wsrm {

@@ -1,5 +1,8 @@
 
-# add export directory to path
+
+# Aliases to use simple names for flatpak applications
+
+# add flatpak export directory to path
 export PATH=${PATH}:/var/lib/flatpak/exports/bin
 
 function 0ad                { com.play0ad.zeroad                            "$@"; }; export -f 0ad

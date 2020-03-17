@@ -16,4 +16,4 @@ export PS1='$(if [[ $? == 0 ]]; then echo "\[\e[0;32m\]✓"; else echo "\[\e[0;3
 
 # hints:
 # !!    shortcut for previous command
-# !!*   shortcut for previous command's parameters
+# !*    shortcut for previous command's parameters

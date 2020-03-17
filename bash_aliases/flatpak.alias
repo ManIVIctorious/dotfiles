@@ -8,6 +8,7 @@ export PATH=${PATH}:/var/lib/flatpak/exports/bin
 function 0ad                { com.play0ad.zeroad                            "$@"; }; export -f 0ad
 function anki               { net.ankiweb.Anki                              "$@"; }; export -f anki
 function blender            { org.blender.Blender                           "$@"; }; export -f blender
+function cheese             { org.gnome.Cheese                              "$@"; }; export -f cheese
 function clementine         { org.clementine_player.Clementine              "$@"; }; export -f clementine
 function devhelp            { org.gnome.Devhelp                             "$@"; }; export -f devhelp
 function drawio             { com.jgraph.drawio.desktop                     "$@"; }; export -f drawio

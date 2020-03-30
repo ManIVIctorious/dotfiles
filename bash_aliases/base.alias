@@ -14,18 +14,27 @@
   alias lla='ls -lhA  --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
   alias  li='ls -lhi  --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 
+# provide the histg (history grep) command
+  alias histg='history | grep'
+
 # colorisation of CLI
   alias diff='diff --color=auto'
   alias grep='grep --color=auto -d skip'
+
+# settings for less:
   # source code highlighting for less, requires source-highlight package
   export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-  # settings for less:
-  #   make search smartcase (-i)
-  #   use colors in pager (-R)
-  #   enable mouse wheel scrolling (--mouse)
-  #   set scroll width to 3 lines per tic (--wheel-lines=3)
+  # make search smartcase (-i)
+  # use colors in pager (-R)
+  # enable mouse wheel scrolling (--mouse)
+  # set scroll width to 3 lines per tic (--wheel-lines=3)
   export LESS='-iR --mouse --wheel-lines=3'
+
+# set default values for find (requires which to prevent infinite recursion)
+  function find { $(which find) "$@" -regextype grep; }
+
+# display load average by using the "load" command
+  function load { awk '{print $1,$2,$3}' /proc/loadavg; }; export -f load
 
 # additional aliases
   alias cp="cp -i"
-  function find { find "$@" -regextype grep; }

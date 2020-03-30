@@ -1,6 +1,6 @@
 # set vi input mode
 set -o vi
-export EDITOR=nvim
+export EDITOR=vim
 
 # Prepend cd to directory names automatically
 shopt -s autocd
@@ -15,5 +15,6 @@ export HISTCONTROL=ignorespace:ignoredups
 export PS1='$(if [[ $? == 0 ]]; then echo "\[\e[0;32m\]✓"; else echo "\[\e[0;31m\]✗"; fi)'" \[\e[0;1m\][\u@\h \W]\$ \[\e[m\]"
 
 # hints:
+# unset remove alias, shell function or variable (reverse of export)
 # !!    shortcut for previous command
 # !*    shortcut for previous command's parameters

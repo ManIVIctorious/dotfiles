@@ -7,4 +7,3 @@
 function pdiff {
     diff --color=always "$@" | less -RFX
 }
-export -f pdiff

@@ -4,4 +4,3 @@
 function allusers {
   cat /etc/passwd | cut -d: -f1
 }
-export -f allusers

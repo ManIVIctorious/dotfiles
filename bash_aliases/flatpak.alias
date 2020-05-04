@@ -5,48 +5,49 @@
 # add flatpak export directory to path
 export PATH=${PATH}:/var/lib/flatpak/exports/bin
 
-function 0ad                { com.play0ad.zeroad                            "$@"; }; export -f 0ad
-function anki               { net.ankiweb.Anki                              "$@"; }; export -f anki
-function blender            { org.blender.Blender                           "$@"; }; export -f blender
-function calibre            { com.calibre_ebook.calibre                     "$@"; }; export -f calibre
-function cheese             { org.gnome.Cheese                              "$@"; }; export -f cheese
-function clementine         { org.clementine_player.Clementine              "$@"; }; export -f clementine
-function devhelp            { org.gnome.Devhelp                             "$@"; }; export -f devhelp
-function drawio             { com.jgraph.drawio.desktop                     "$@"; }; export -f drawio
-function engauge            { io.github.markummitchell.Engauge_Digitizer    "$@"; }; export -f engauge
-function eog                { org.gnome.eog                                 "$@"; }; export -f eog
-function evince             { org.gnome.Evince                              "$@"; }; export -f evince
-function flatseal           { com.github.tchx84.Flatseal                    "$@"; }; export -f flatseal
-function fractal            { org.gnome.Fractal                             "$@"; }; export -f fractal
-function geary              { org.gnome.Geary                               "$@"; }; export -f geary
-function ghex               { org.gnome.GHex                                "$@"; }; export -f ghex
-function gimp               { org.gimp.GIMP                                 "$@"; }; export -f gimp
-function gnome-boxes        { org.gnome.Boxes                               "$@"; }; export -f gnome-boxes
-function gnome-builder      { org.gnome.Builder                             "$@"; }; export -f gnome-builder
-function gnome-calculator   { org.gnome.Calculator                          "$@"; }; export -f gnome-calculator
-function gnome-calendar     { org.gnome.Calendar                            "$@"; }; export -f gnome-calendar
-function gnome-characters   { org.gnome.Characters                          "$@"; }; export -f gnome-characters
-function gnome-contacts     { org.gnome.Contacts                            "$@"; }; export -f gnome-contacts
-function gnome-logs         { org.gnome.Logs                                "$@"; }; export -f gnome-logs
-function gnome-maps         { org.gnome.Maps                                "$@"; }; export -f gnome-maps
-function gnome-mines        { org.gnome.Mines                               "$@"; }; export -f gnome-mines
-function gnome-recipes      { org.gnome.Recipes                             "$@"; }; export -f gnome-recipes
-function handbrake          { fr.handbrake.ghb                              "$@"; }; export -f handbrake
-function loffice            { org.libreoffice.LibreOffice                   "$@"; }; export -f loffice
-function meld               { org.gnome.meld                                "$@"; }; export -f meld
-function octave             { org.octave.Octave                             "$@"; }; export -f octave
-function okular             { org.kde.okular                                "$@"; }; export -f okular
-function pavucontrol        { org.pulseaudio.pavucontrol                    "$@"; }; export -f pavucontrol
-function pcsx2              { net.pcsx2.PCSX2                               "$@"; }; export -f pcsx2
-function pulse-effects      { com.github.wwmm.pulseeffects                  "$@"; }; export -f pulse-effects
-function qbittorrent        { org.qbittorrent.qBittorrent                   "$@"; }; export -f qbittorrent
-function riot               { im.riot.Riot                                  "$@"; }; export -f riot
-function scribus            { net.scribus.Scribus                           "$@"; }; export -f scribus
-function seahorse           { org.gnome.seahorse.Application                "$@"; }; export -f seahorse
-function shortwave          { de.haeckerfelix.Shortwave                     "$@"; }; export -f shortwave
-function steam              { com.valvesoftware.Steam                       "$@"; }; export -f steam
-function supertuxkart       { net.supertuxkart.SuperTuxKart                 "$@"; }; export -f supertuxkart
-function totem              { org.gnome.Totem                               "$@"; }; export -f totem
-function vlc                { org.videolan.VLC                              "$@"; }; export -f vlc
-function xkcd               { com.github.rkoesters.xkcd-gtk                 "$@"; }; export -f xkcd
-function zotero             { org.zotero.Zotero                             "$@"; }; export -f zotero
+function 0ad                { com.play0ad.zeroad                            "$@"; }
+function anki               { net.ankiweb.Anki                              "$@"; }
+function blender            { org.blender.Blender                           "$@"; }
+function calibre            { com.calibre_ebook.calibre                     "$@"; }
+function cheese             { org.gnome.Cheese                              "$@"; }
+function clementine         { org.clementine_player.Clementine              "$@"; }
+function devhelp            { org.gnome.Devhelp                             "$@"; }
+function drawio             { com.jgraph.drawio.desktop                     "$@"; }
+function engauge            { io.github.markummitchell.Engauge_Digitizer    "$@"; }
+function eog                { org.gnome.eog                                 "$@"; }
+function evince             { org.gnome.Evince                              "$@"; }
+function firefox            { org.mozilla.firefox                           "$@"; }
+function flatseal           { com.github.tchx84.Flatseal                    "$@"; }
+function fractal            { org.gnome.Fractal                             "$@"; }
+function geary              { org.gnome.Geary                               "$@"; }
+function ghex               { org.gnome.GHex                                "$@"; }
+function gimp               { org.gimp.GIMP                                 "$@"; }
+function gnome-boxes        { org.gnome.Boxes                               "$@"; }
+function gnome-builder      { org.gnome.Builder                             "$@"; }
+function gnome-calculator   { org.gnome.Calculator                          "$@"; }
+function gnome-calendar     { org.gnome.Calendar                            "$@"; }
+function gnome-characters   { org.gnome.Characters                          "$@"; }
+function gnome-contacts     { org.gnome.Contacts                            "$@"; }
+function gnome-logs         { org.gnome.Logs                                "$@"; }
+function gnome-maps         { org.gnome.Maps                                "$@"; }
+function gnome-mines        { org.gnome.Mines                               "$@"; }
+function gnome-recipes      { org.gnome.Recipes                             "$@"; }
+function handbrake          { fr.handbrake.ghb                              "$@"; }
+function loffice            { org.libreoffice.LibreOffice                   "$@"; }
+function meld               { org.gnome.meld                                "$@"; }
+function octave             { org.octave.Octave                             "$@"; }
+function okular             { org.kde.okular                                "$@"; }
+function pavucontrol        { org.pulseaudio.pavucontrol                    "$@"; }
+function pcsx2              { net.pcsx2.PCSX2                               "$@"; }
+function pulse-effects      { com.github.wwmm.pulseeffects                  "$@"; }
+function qbittorrent        { org.qbittorrent.qBittorrent                   "$@"; }
+function riot               { im.riot.Riot                                  "$@"; }
+function scribus            { net.scribus.Scribus                           "$@"; }
+function seahorse           { org.gnome.seahorse.Application                "$@"; }
+function shortwave          { de.haeckerfelix.Shortwave                     "$@"; }
+function steam              { com.valvesoftware.Steam                       "$@"; }
+function supertuxkart       { net.supertuxkart.SuperTuxKart                 "$@"; }
+function totem              { org.gnome.Totem                               "$@"; }
+function vlc                { org.videolan.VLC                              "$@"; }
+function xkcd               { com.github.rkoesters.xkcd-gtk                 "$@"; }
+function zotero             { org.zotero.Zotero                             "$@"; }

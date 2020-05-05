@@ -1,1 +1,1 @@
-org.blender.Blender "$@"
+/var/lib/flatpak/exports/bin/org.blender.Blender

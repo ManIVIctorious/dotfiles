@@ -1,1 +1,1 @@
-org.gnome.eog "$@"
+/var/lib/flatpak/exports/bin/org.gnome.eog

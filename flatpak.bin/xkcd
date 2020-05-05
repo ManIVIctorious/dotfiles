@@ -1,1 +1,1 @@
-com.github.rkoesters.xkcd-gtk "$@"
+/var/lib/flatpak/exports/bin/com.github.rkoesters.xkcd-gtk

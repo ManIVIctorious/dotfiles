@@ -1,1 +1,1 @@
-org.libreoffice.LibreOffice "$@"
+/var/lib/flatpak/exports/bin/org.libreoffice.LibreOffice

@@ -1,1 +1,1 @@
-net.ankiweb.Anki "$@"
+/var/lib/flatpak/exports/bin/net.ankiweb.Anki

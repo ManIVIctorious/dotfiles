@@ -1,1 +1,1 @@
-org.clementine_player.Clementine "$@"
+/var/lib/flatpak/exports/bin/org.clementine_player.Clementine

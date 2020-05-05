@@ -1,1 +1,1 @@
-fr.handbrake.ghb "$@"
+/var/lib/flatpak/exports/bin/fr.handbrake.ghb

@@ -11,18 +11,58 @@ list=(
     xinitrc
 )
 
-# basedir (location of install.sh script)
-basedir=${0%/*}
-if [ -z ${basedir} ]; then basedir="."; fi
 
-# create bashrc by concatenating (host specific) exports, proto.bashrc, aliases and functions
-if [ -d "${basedir}/exports"        ]; then bashfiles+=( $(find "${basedir}/exports/"        -name "*.export" | sort) ); fi
-bashfiles+=("${basedir}/proto.bashrc")
-if [ -d "${basedir}/bash_aliases"   ]; then bashfiles+=( $(find "${basedir}/bash_aliases/"   -name "*.alias"  | sort) ); fi
-if [ -d "${basedir}/bash_functions" ]; then bashfiles+=( $(find "${basedir}/bash_functions/" -name "*.func"   | sort) ); fi
+## get basedir (location of install.sh script)
+pushd . > /dev/null
+
+  basedir="$0"
+
+# if invoked by a symbolic link follow the link and get path
+  if ([ -L "${basedir}" ]); then
+    while [ -L "${basedir}" ]; do
+      cd $(dirname "${basedir}")
+      basedir=$(readlink "${basedir}")
+    done
+  fi
+
+  cd $(dirname "${basedir}")
+  basedir="${PWD}"
+
+popd  > /dev/null
+
+
+## create profile (expand some place holders from proto.profile to profile)
+  proto="${basedir}/proto.profile"
+profile="${basedir}/profile"
+sed "s+__insert_flatpak_alias_dir__+${basedir}/flatpak.bin+" "${proto}" > "${profile}"
+
+
+## create bashrc
+# allowed file extensions are:
+#   .export   (host specific) exports
+#   .func     bash functions
+#   .alias    bash aliases
+# bash.head
+headdir="${basedir}/bash.head"
+if [ -d "${headdir}" ]; then
+  bashfiles+=( $(find "${headdir}" -type f -name *.export | sort) )
+  bashfiles+=( $(find "${headdir}" -type f -name *.func   | sort) )
+  bashfiles+=( $(find "${headdir}" -type f -name *.alias  | sort) )
+fi
+# proto.bashrc
+bashfiles+=( "${basedir}/proto.bashrc" )
+# bash.tail
+taildir="${basedir}/bash.tail"
+if [ -d "${taildir}" ]; then
+  bashfiles+=( $(find "${taildir}" -type f -name *.export | sort) )
+  bashfiles+=( $(find "${taildir}" -type f -name *.func   | sort) )
+  bashfiles+=( $(find "${taildir}" -type f -name *.alias  | sort) )
+fi
+
 cat "${bashfiles[@]}" > "${basedir}/bashrc"
 
+
 # link all files in list to ${HOME}/.<entry>
-for i in ${list[@]} ; do
-  ln -s "${basedir}/${i}" "${HOME}/.${i}"
+for i in ${list[@]}; do
+  ln -sf "${basedir}/${i}" "${HOME}/.${i}"
 done

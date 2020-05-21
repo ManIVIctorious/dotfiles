@@ -1,1 +1,10 @@
-/var/lib/flatpak/exports/bin/org.mozilla.firefox
+#!/bin/sh
+
+# enable wayland
+export MOZ_ENABLE_WAYLAND=1
+# enable webrender
+export MOZ_WEBRENDER=1
+# enable touch screen support in firefox
+export MOZ_USE_XINPUT2=1
+
+exec /usr/bin/flatpak run --branch=stable --arch=x86_64 org.mozilla.firefox "$@"

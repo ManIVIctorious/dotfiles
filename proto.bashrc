@@ -3,7 +3,9 @@ set -o vi
 export EDITOR=vim
 
 # Prepend cd to directory names automatically
+# and check window size after each command (fix redraw issues)
 shopt -s autocd
+shopt -s checkwinsize
 
 # History preferences
 export HISTSIZE=500000
@@ -12,7 +14,25 @@ export HISTCONTROL=ignorespace:ignoredups
 
 # set the default prompt
 #   if previous command was successful display green ✓, else display red ✗
-export PS1='$(if [[ $? == 0 ]]; then echo "\[\e[0;32m\]✓"; else echo "\[\e[0;31m\]✗"; fi)'" \[\e[0;1m\][\u@\h \W]\$ \[\e[m\]"
+#{{{
+ BOLD="$(tput bold)"
+GREEN="$(tput setaf 2)"
+  RED="$(tput setaf 1)"
+WHITE="$(tput setaf 15)"
+RESET="$(tput sgr0)"
+
+function checkreturn {
+    local return=$?
+
+    if [[ ${return} == 0 ]]; then
+        printf "\001${GREEN}\002✓"
+    else
+        printf "\001${RED}\002✗"
+    fi
+}
+#}}}
+MYPROMPT='[\u@\h \W]\$'
+export PS1='$(checkreturn)'"\[${BOLD}${WHITE}\] ${MYPROMPT} \[${RESET}\]"
 
 ### Hints:
 #

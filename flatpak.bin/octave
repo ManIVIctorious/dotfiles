@@ -1,5 +1,1 @@
-#!/bin/sh
-
-export TERM=xterm-color
-
-exec /usr/bin/flatpak run --branch=stable --arch=x86_64 org.octave.Octave "$@"
+/var/lib/flatpak/exports/bin/org.octave.Octave

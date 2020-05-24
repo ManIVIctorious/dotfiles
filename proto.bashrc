@@ -36,11 +36,17 @@ export PS1='$(checkreturn)'"\[${BOLD}${WHITE}\] ${MYPROMPT} \[${RESET}\]"
 
 ### Hints:
 #
-## Re-running commands:
-#      !!       re-run previous command
-#      !*       insert previous command's parameters
-# ^<old>^<new>  run last command with first occurrence of <old> substituted by <new>
-#               (e.g. "^ls^cd" after an ls command is identical to "cd !*")
+## Bash Bang (!) commands
+# Re-run all or part of a previous command:
+#   !!          Run the last command again
+#   !foo        Run the most recent command that starts with 'foo' (e.g. !ls)
+#   !foo:p      Print out the command that !foo would run
+#               also add it to the command history
+#   !$          Run the last word of the previous command (same as Alt + .)
+#   !$:p        Print out the word that !$ would substitute
+#   !*          Run the previous command except for the last word
+#   !*:p        Print out the previous command except for the last word
+#  ^foo^bar     Run the previous command replacing foo with bar
 #
 ## Directory stack:
 #   cd    [dir] changes last directory in dir-stack (index 0)

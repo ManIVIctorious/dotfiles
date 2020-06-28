@@ -15,11 +15,13 @@ export HISTCONTROL=ignorespace:ignoredups
 # set the default prompt
 #   if previous command was successful display green ✓, else display red ✗
 #{{{
- BOLD="$(tput bold)"
-GREEN="$(tput setaf 2)"
-  RED="$(tput setaf 1)"
-WHITE="$(tput setaf 15)"
-RESET="$(tput sgr0)"
+if (tty -s); then
+     BOLD="$(tput bold)"
+    GREEN="$(tput setaf 2)"
+      RED="$(tput setaf 1)"
+    WHITE="$(tput setaf 15)"
+    RESET="$(tput sgr0)"
+fi
 
 function checkreturn {
     local return=$?
@@ -83,7 +85,7 @@ export PS1='$(checkreturn)'"\[${BOLD}${WHITE}\] ${MYPROMPT} \[${RESET}\]"
 
 # settings for less:
   # source code highlighting for less, requires source-highlight package
-  export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+  export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s --failsafe"
   # make search smartcase (-i)
   # use colors in pager (-R)
   # enable mouse wheel scrolling (--mouse)

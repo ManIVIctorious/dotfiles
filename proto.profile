@@ -16,7 +16,6 @@ export QT_STYLE_OVERRIDE=breeze
 if [ "$(tty)" = "/dev/tty2" ]; then
     if [ -f "/usr/bin/sway" ]; then
     # set backends to wayland
-#       export GDK_BACKEND=wayland
         export QT_QPA_PLATFORM=wayland
         export SDL_VIDEODRIVER=wayland
         exec sway

@@ -100,3 +100,4 @@ export PS1='$(checkreturn)'"\[${BOLD}${WHITE}\] ${MYPROMPT} \[${RESET}\]"
 
 # additional aliases
   alias cp="cp -i"
+  alias todo="notes"

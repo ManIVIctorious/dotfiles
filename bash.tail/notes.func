@@ -1,0 +1,21 @@
+
+
+# notes
+# Open notes/todo/journal file with default editor
+# filename and directory can be overwritten by setting
+# ${journaldirectory} and/or ${journalfile} variables
+function notes {
+# if unset set journaldirectory and file variables
+  if [ -z ${journaldirectory} ]; then
+    local journaldirectory=${HOME}/.local/notes
+  fi
+  if [ -z ${journalfile} ]; then
+    local journalfile=index.md
+  fi
+# create journaldirectory if it does not exist
+  if [ ! -d "${journaldirectory}" ]; then
+    mkdir -p "${journaldirectory}"
+  fi
+
+  $EDITOR ${journaldirectory}/${journalfile}
+}

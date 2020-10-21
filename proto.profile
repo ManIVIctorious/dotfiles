@@ -21,3 +21,5 @@ if [ "$(tty)" = "/dev/tty2" ]; then
         exec sway
     fi
 fi
+
+source ${HOME}/.bashrc

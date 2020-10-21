@@ -20,6 +20,7 @@ if (tty -s); then
     GREEN="$(tput setaf 2)"
       RED="$(tput setaf 1)"
     WHITE="$(tput setaf 15)"
+   REMOTE="$(tput setaf 49)"
     RESET="$(tput sgr0)"
 fi
 
@@ -32,9 +33,15 @@ function checkreturn {
         printf "\001${RED}\002✗"
     fi
 }
+
+if [ -z ${SSH_TTY} ]; then
+    PROMPTCOLOR=${WHITE}
+else
+    PROMPTCOLOR=${REMOTE}
+fi
 #}}}
 MYPROMPT='[\u@\h \W]\$'
-export PS1='$(checkreturn)'"\[${BOLD}${WHITE}\] ${MYPROMPT} \[${RESET}\]"
+export PS1='$(checkreturn)'"\[${BOLD}${PROMPTCOLOR}\] ${MYPROMPT} \[${RESET}\]"
 
 ### Hints:
 #
